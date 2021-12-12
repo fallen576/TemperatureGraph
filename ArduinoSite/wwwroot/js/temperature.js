@@ -69,3 +69,20 @@ function updateGraph(f,c){
 
     Plotly.extendTraces(document.getElementById("temperature"), { y: [[f],[c]] }, [0,1])
 }
+
+setTimeout(() => {
+    //simulate post cause arduino sucks
+    load();
+},1000);
+const timer = ms => new Promise(res => setTimeout(res, ms))
+async function load () {
+    for (var i = 1; i < 50; i++) {
+        $.ajax({
+            type: "POST",
+            contentType:"application/json",
+            url: "/api/update/temperature",
+            data: "{\"Voltage\":1,\"Fahrenheit\":"+i*1.2+",\"Celcius\":"+i+2+"}"
+        });
+        await timer(100);
+    }
+}
