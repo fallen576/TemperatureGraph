@@ -12,3 +12,4 @@ At 3:31 minutes in the video he demonstrates how the sensor reads when the cup i
 ### Some Images
 ![Alt text](https://github.com/fallen576/TemperatureGraph/blob/main/ArduinoSite/wwwroot/images/img1.png "Image 1")
 ![Alt text](https://github.com/fallen576/TemperatureGraph/blob/main/ArduinoSite/wwwroot/images/img2.png "Image 2")
+![Alt text](https://github.com/fallen576/TemperatureGraph/blob/main/ArduinoSite/wwwroot/images/arduino.jpg "Image 2")
