@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ArduinoSite.Models;
+using ArduinoSite.Hubs;
 
 namespace ArduinoSite.Controllers
 {
@@ -20,6 +21,10 @@ namespace ArduinoSite.Controllers
 
         public IActionResult Index()
         {
+            if (MessageSender._tempQueue.Count > 0)
+            {
+                Console.WriteLine("Leaving Queue " + MessageSender._tempQueue.Dequeue());
+            }
             return View();
         }
 

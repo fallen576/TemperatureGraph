@@ -8,5 +8,10 @@ namespace ArduinoSite.Models
         public double Voltage { get; set; }
         public double Celcius { get; set; }
         public double Fahrenheit { get; set; }
+
+        public override String ToString()
+        {
+            return $"Voltage: {Voltage} Celcius: {Celcius} Fahrenheit {Fahrenheit}";
+        }
     }
 }

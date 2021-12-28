@@ -6,6 +6,10 @@ connection.on("update_temperature", data => {
     updateGraph(data.fahrenheit, data.celcius);
 });
 
+connection.on("ClientHook", data => {
+    updateGraph(data.fahrenheit, data.celcius);
+});
+
 connection.start().then(() => {});
 createPlot();
 
@@ -70,6 +74,7 @@ function updateGraph(f,c){
     Plotly.extendTraces(document.getElementById("temperature"), { y: [[f],[c]] }, [0,1])
 }
 
+/*
 setTimeout(() => {
     //simulate post cause arduino sucks
     load();
@@ -86,3 +91,4 @@ async function load () {
         await timer(100);
     }
 }
+*/

@@ -25,6 +25,7 @@ namespace ArduinoSite
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddHostedService<CleanQueue>();
             services.AddSignalR();
         }
 
@@ -55,6 +56,9 @@ namespace ArduinoSite
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapHub<CustomHub>("/temperature");
             });
+
+            SerialComms.Init();
+            SerialComms.PrintPorts();
         }
     }
 }
